@@ -21,7 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
 {
 
-    int scroll = 0;
+    int scrollX = 0;
 
     List<Club> clubList = new ArrayList<>();
 
@@ -52,9 +52,9 @@ public class MainActivity extends AppCompatActivity
             {
                 super.onScrolled(recyclerView, dx, dy);
 
-                scroll += dx;
+                scrollX += dx;
 
-                headerScroll.scrollTo(scroll, 0);
+                headerScroll.scrollTo(scrollX, 0);
             }
 
             @Override
