@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">TableView</string>
+
+    <string name="name">Name</string>
+    <string name="logo">Logo</string>
+    <string name="location">Location</string>
+    <string name="stadium">Stadium</string>
+    <string name="league">League</string>
+    <string name="coach">Coach</string>
+    <string name="star">Star</string>
+
+    <string name="hint_search">Search by Club Name</string>
+    <string name="action_search">Search</string>
 </resources>

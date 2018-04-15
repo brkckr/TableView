@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:background="@android:color/white"
+              android:layout_width="wrap_content"
+              android:layout_height="@dimen/row_height">
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtName"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:layout_width="@dimen/cell_width"
+        android:layout_margin="@dimen/margin"
+        android:contentDescription="@string/logo"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/imgLogo"/>
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtLocation"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtStadiumName"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtLeagueName"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtCoachName"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtStarPlayerName"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

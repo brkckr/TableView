@@ -1,19 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+   <HorizontalScrollView
+       android:layout_width="match_parent"
+       android:id="@+id/headerScroll"
+       android:layout_height="@dimen/header_height">
 
-</android.support.constraint.ConstraintLayout>
+      <LinearLayout android:orientation="horizontal"
+                    android:background="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+         <TextView
+             android:layout_width="@dimen/cell_width"
+             android:id="@+id/txtName"
+             android:textStyle="bold"
+             android:layout_marginStart="@dimen/margin"
+             android:text="@string/name"
+             android:textAllCaps="true"
+             android:gravity="center|start"
+             android:textColor="@android:color/white"
+             android:layout_height="match_parent"/>
+
+         <TextView
+             android:layout_width="@dimen/cell_width"
+             android:id="@+id/txtLogo"
+             android:textStyle="bold"
+             android:layout_marginStart="@dimen/margin"
+             android:text="@string/logo"
+             android:textAllCaps="true"
+             android:gravity="center|start"
+             android:textColor="@android:color/white"
+             android:layout_height="match_parent"/>
+
+         <TextView
+             android:layout_width="@dimen/cell_width"
+             android:id="@+id/txtLocation"
+             android:textStyle="bold"
+             android:layout_marginStart="@dimen/margin"
+             android:gravity="center|start"
+             android:text="@string/location"
+             android:textAllCaps="true"
+             android:textColor="@android:color/white"
+             android:layout_height="match_parent"/>
+
+         <TextView
+             android:layout_width="@dimen/cell_width"
+             android:id="@+id/txtStadiumName"
+             android:gravity="center|start"
+             android:layout_marginStart="@dimen/margin"
+             android:textStyle="bold"
+             android:text="@string/stadium"
+             android:textAllCaps="true"
+             android:textColor="@android:color/white"
+             android:layout_height="match_parent"/>
+
+         <TextView
+             android:layout_width="@dimen/cell_width"
+             android:id="@+id/txtLeagueName"
+             android:textStyle="bold"
+             android:layout_marginStart="@dimen/margin"
+             android:gravity="center|start"
+             android:text="@string/league"
+             android:textAllCaps="true"
+             android:textColor="@android:color/white"
+             android:layout_height="match_parent"/>
+
+         <TextView
+             android:layout_width="@dimen/cell_width"
+             android:id="@+id/txtCoachName"
+             android:gravity="center|start"
+             android:textStyle="bold"
+             android:layout_marginStart="@dimen/margin"
+             android:text="@string/coach"
+             android:textAllCaps="true"
+             android:textColor="@android:color/white"
+             android:layout_height="match_parent"/>
+
+         <TextView
+             android:layout_width="@dimen/cell_width"
+             android:id="@+id/txtStarPlayerName"
+             android:gravity="center|start"
+             android:textStyle="bold"
+             android:layout_marginStart="@dimen/margin"
+             android:text="@string/star"
+             android:textAllCaps="true"
+             android:textColor="@android:color/white"
+             android:layout_height="match_parent"/>
+
+      </LinearLayout>
+
+   </HorizontalScrollView>
+
+   <android.support.v7.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:id="@+id/rvClub"
+       android:layout_height="match_parent">
+
+   </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

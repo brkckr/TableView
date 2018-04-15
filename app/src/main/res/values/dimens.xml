@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="row_height">80dp</dimen>
+    <dimen name="header_height">60dp</dimen>
+    <dimen name="cell_width">120dp</dimen>
+    <dimen name="margin">5dp</dimen>
+</resources>
