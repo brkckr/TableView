@@ -9,8 +9,6 @@ A RecyclerView that looks like a TableView with a fixed header that can scroll h
 - Both horizontal and vertical scrollable
 - Searchable
 
-## Usage
-
 ---
 
 ## License
