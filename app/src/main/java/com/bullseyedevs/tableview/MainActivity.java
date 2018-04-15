@@ -21,9 +21,12 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
 {
 
+    int scroll = 0;
+
     List<Club> clubList = new ArrayList<>();
 
-    RecyclerView recyclerView;
+    RecyclerView rvClub;
+
     HorizontalScrollView headerScroll;
 
     SearchView searchView;
@@ -42,7 +45,24 @@ public class MainActivity extends AppCompatActivity
 
         setUpRecyclerView();
 
-        setUpSearch();
+        rvClub.addOnScrollListener(new RecyclerView.OnScrollListener()
+        {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy)
+            {
+                super.onScrolled(recyclerView, dx, dy);
+
+                scroll += dx;
+
+                headerScroll.scrollTo(scroll, 0);
+            }
+
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState)
+            {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+        });
     }
 
     @Override
@@ -52,10 +72,8 @@ public class MainActivity extends AppCompatActivity
 
         // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) menu.findItem(R.id.action_search)
-                .getActionView();
-        searchView.setSearchableInfo(searchManager
-                .getSearchableInfo(getComponentName()));
+        searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setMaxWidth(Integer.MAX_VALUE);
 
         // listening to search query text change
@@ -111,7 +129,8 @@ public class MainActivity extends AppCompatActivity
 
     private void initViews()
     {
-        recyclerView = findViewById(R.id.rvClub);
+        rvClub = findViewById(R.id.rvClub);
+        headerScroll = findViewById(R.id.headerScroll);
     }
 
     /**
@@ -144,16 +163,8 @@ public class MainActivity extends AppCompatActivity
 
         FixedGridLayoutManager manager = new FixedGridLayoutManager();
         manager.setTotalColumnCount(1);
-        recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(clubAdapter);
-        recyclerView.addItemDecoration(new DividerItemDecoration(MainActivity.this, DividerItemDecoration.VERTICAL));
-    }
-
-    /**
-     * Handles SearchView
-     */
-    private void setUpSearch()
-    {
-
+        rvClub.setLayoutManager(manager);
+        rvClub.setAdapter(clubAdapter);
+        rvClub.addItemDecoration(new DividerItemDecoration(MainActivity.this, DividerItemDecoration.VERTICAL));
     }
 }
